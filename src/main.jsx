@@ -147,7 +147,7 @@ function AirportField({ label, value, onChange, placeholder }) {
   );
 
   return (
-    <div className="field-box" ref={wrapperRef}>
+    <div className={`field-box ${open ? 'active-dropdown' : ''}`} ref={wrapperRef}>
       <label>{label}</label>
       <div className="field-input-val" onClick={() => setOpen(!open)}>
         <MapPin size={16} />
@@ -903,8 +903,10 @@ function Home({ activeCurrency, onPerformSearch, onOpenDestModal, wishlist, onTo
     <main id="home">
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-orb orb-one" />
-        <div className="hero-orb orb-two" />
+        <div className="hero-orbs-wrap">
+          <div className="hero-orb orb-one" />
+          <div className="hero-orb orb-two" />
+        </div>
         <div className="container hero-grid">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
             <div className="eyebrow"><Sparkles size={14} /> A more thoughtful way to fly</div>
