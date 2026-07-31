@@ -81,10 +81,55 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .airport-option:hover{background:#eff6ff}
 .airport-option strong{font-size:12px;color:#0f172a;display:block}
 .airport-option small{font-size:10px;color:#64748b}
-.airport-code{background:#e0e7ff;color:#3730a3;font-size:10px;font-weight:800;padding:3px 7px;border-radius:6px}
+.hero-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: 480px;
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(37,99,235,.15);
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Airport fields pair for swapping */
+.airport-fields-pair {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.swap-airports-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .search-btn{height:100%;min-height:52px;border-radius:14px;background:#2563eb;color:#fff;font-weight:800;font-size:13px;display:flex;justify-content:center;align-items:center;gap:8px;transition:all .2s;box-shadow:0 8px 20px rgba(37,99,235,.25)}
-.search-btn:hover{background:#1d4ed8;transform:translateY(-1px);box-shadow:0 12px 24px rgba(37,99,235,.35)}
+@media (max-width: 640px) {
+  .hero-photo {
+    max-height: 250px;
+  }
+  .fields {
+    grid-template-columns: 1fr;
+  }
+  .search-btn {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
 
 /* Simulated Loading State */
 .loading-box{margin-top:20px;padding:24px;background:#eff6ff;border-radius:16px;border:1px solid #bfdbfe;text-align:center;color:#1e40af}
@@ -144,6 +189,25 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 
 .features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .feature-card{padding:26px 20px;border:1px solid #e2e8f0;border-radius:18px;background:#fff;transition:all .25s}
+/* Hero heading adjustments */
+.hero h1 {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .hero {
+    padding: 40px 0 30px;
+  }
+}
+
+.swap-airports-btn:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
 .feature-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(15,23,42,.06);border-color:#bfdbfe}
 .feature-icon{height:42px;width:42px;background:#eff6ff;color:#2563eb;border-radius:12px;display:grid;place-items:center}
 .feature-card h3{font-size:14px;font-weight:800;margin:18px 0 8px;color:#0f172a}

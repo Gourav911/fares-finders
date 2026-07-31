@@ -6,7 +6,7 @@ import {
   Sparkles, BadgeDollarSign, ArrowRight, Star, ChevronDown, Mail, Phone,
   Clock3, Globe2, Send, Compass, Check, CheckCircle2, Users, ArrowUpRight,
   Heart, Filter, SlidersHorizontal, ArrowUpDown, Luggage, ShieldAlert,
-  CreditCard, Ticket, AlertCircle, RefreshCw, Layers
+  CreditCard, Ticket, AlertCircle, RefreshCw, Layers, ArrowLeftRight
 } from 'lucide-react';
 import './styles.css';
 import {
@@ -250,8 +250,23 @@ function SearchCard({ onPerformSearch, initialSearch }) {
       </div>
 
       <div className="fields">
-        <AirportField label="From" value={fromCode} onChange={setFromCode} />
-        <AirportField label="To" value={toCode} onChange={setToCode} />
+        <div className="airport-fields-pair">
+          <AirportField label="From" value={fromCode} onChange={setFromCode} />
+          <button
+            type="button"
+            className="swap-airports-btn"
+            onClick={() => {
+              const temp = fromCode;
+              setFromCode(toCode);
+              setToCode(temp);
+            }}
+            title="Swap Origin & Destination"
+            aria-label="Swap Origin and Destination"
+          >
+            <ArrowLeftRight size={14} />
+          </button>
+          <AirportField label="To" value={toCode} onChange={setToCode} />
+        </div>
 
         <div className="field-box">
           <label>Departure</label>
