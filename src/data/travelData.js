@@ -316,10 +316,9 @@ export const destinations = [
     code: 'RAK',
     startingPriceUSD: 574,
     category: 'Cultural & Historic',
-    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1615482475488-8f1ff9addba5?auto=format&fit=crop&w=1200&q=85',
     gallery: [
-      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1615482475488-8f1ff9addba5?auto=format&fit=crop&w=800&q=80',
     ],
     rating: 4.82,
     bestMonths: 'October – April',
